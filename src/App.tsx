@@ -18,20 +18,24 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-background">
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/copilot" element={<Copilot />} />
-            <Route path="/progress" element={<Progress />} />
-            <Route path="/institution" element={<Institution />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+const AppContent = () => (
+  <div className="min-h-screen bg-background">
+    <Navigation />
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/copilot" element={<Copilot />} />
+      <Route path="/progress" element={<Progress />} />
+      <Route path="/institution" element={<Institution />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </div>
 );
 
 export default App;
